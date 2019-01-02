@@ -6,6 +6,7 @@ class TreeNode:
         self.right = None
 # 输入列表，生成二叉树
 def binary_trees(input):
+    if not input:return None
     root = TreeNode(input[0])
     nodeQueue = [root]
     front = 0
