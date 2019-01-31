@@ -6,6 +6,7 @@ class MyStack(object):
         """
         from collections import deque
         self.deq = deque()
+        self.ept = deque()
 
     def push(self, x):
         """
@@ -35,8 +36,7 @@ class MyStack(object):
         Returns whether the stack is empty.
         :rtype: bool
         """
-        from collections import deque
-        return self.deq == deque()
+        return self.deq == self.ept
         
 
 
