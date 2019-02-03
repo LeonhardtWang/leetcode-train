@@ -13,7 +13,14 @@ class Solution:
         else:
             return self.addDigits(sum_num)
         
-        # 方法二：余九法
+        # 方法二：余九法(本题即为求数根)
+        '''
+        证明：
+        假设，数d的根为d%9( 暂时不取0，整除时取9）
+        当d < 10时，1~9这9个数肯定成立;
+        当d >= 10时，d的根为d%9 = (d-1)%9+1，即d的前一个数的数根加1.
+        得证.
+        '''
         '''
         if num == 0:return 0
         return (num - 1) % 9 - 1
