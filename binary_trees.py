@@ -29,3 +29,5 @@ def binary_trees(input):
             node.right = TreeNode(item)
             nodeQueue.append(node.right)
     return root
+
+print(binary_trees([1, 2, 3, 4]) == binary_trees([1, 2, 3, 4]))
