@@ -16,5 +16,22 @@ class Solutin:
             res.append(tmp)
         return res[n]
 
+# 方法二：递归
+class Solutin2:
+    def generateParenthesis(self, n):
+        self.result = []
+        if n == 0:
+            return self.result
+        self._gen(0, 0, n, '')
+        return self.result
+        
+    def _gen(self, left, right, n, result):
+        if left == right == n:
+            self.result.append(result)
+            return 
+        if left < n:
+            self._gen(left+1, right, n, result+'(')
+        if left > right and right < n:
+            self._gen(left, right+1, n, result+')')
 
-print(Solutin().generateParenthesis(3))
+print(Solutin2().generateParenthesis(4))
