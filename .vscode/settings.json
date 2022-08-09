@@ -1,4 +1,6 @@
 {
-    "python.pythonPath": "C:\\Users\\LeoWang\\Anaconda3\\python.exe",
-    "python.linting.pylintEnabled": true
+    "files.associations": {
+        "vector": "cpp",
+        "map": "cpp"
+    }
 }
