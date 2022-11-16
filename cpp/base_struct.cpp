@@ -10,13 +10,21 @@ struct ListNode {
 };
 
 ListNode* build_list(std::vector<int> list, bool reverse=false) {
-    ListNode* res = nullptr;
+    ListNode* res;
     if (list.empty()) {
-        return res;
+        return nullptr;
     }
     size_t init = reverse ? 0 : list.size() - 1;
     for (size_t i = init; i >= 0 && i < list.size(); reverse ? i++ : i--) {
-        ListNode curr_node(list[i], res);
+        ListNode curr_node(list[i]);
+        // if (i == init) {
+        //     curr_node = ListNode(list[i]);
+        // } else {
+        //     curr_node = ListNode(list[i], res);
+        // }
+        if (i != init) {
+            curr_node.next = res;
+        }
         res = &curr_node;
     }
     return res;
